@@ -1,0 +1,15 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency: master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
